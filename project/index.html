@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSSReset.css">
+        <link rel="stylesheet" href="estilos.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Encurtador de links</title>
+        <script type="text/javascript">
+            //resolução navegador
+            document.write(screen.width+'x'+screen.height);
+            
+            //resolução 'real' navegador
+            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+            document.write(width+'x'+height);
+         </script>
+    </head>
+
+    <body>
+        <!-- Início do cabeçalho -->
+        <header class = "logo container">
+
+            <a href="http://chaordic.com.br/">
+                <img src="../Assets/logo-chaordic.png" alt="Logo Chaordic"></img>
+            </a>
+           
+        <!-- Fim do cabeçalho -->
+        </header>
+        <!-- Início do shortner -->
+        <article class = "shortener">
+
+            <section class = "title">
+                <p>Encurte seus links.</p>
+            </section>
+
+            <section class = "subtitle">
+                <p>Links são longos. Encurte os links que você deseja compartilhar,</p> 
+                <p>e acompanhe enquanto viajam através da internet.</p>
+            </section>
+            
+                <form action="#">
+                    <spam class="wrapper">
+                        <input type="text" id = "url_input" class="text_input" placeholder="Cole o seu link aqui" autofocus required>
+                        <input type="reset" id = "btn_reset" class="button_reset" value = "X">
+                    </spam>
+                    <input type="submit" id = "btn_submit" class="button_submit" value="ENCURTAR">
+                </form>
+            
+        </article>
+
+        <!--End shortner -->
+            <footer>
+                 <a href="https://www.chaordic.com.br">
+                    <span class="footer-chaordic">chr.dc</span>
+                </a>
+                <div class="footer-social">
+                    <a href="https://twitter.com/chaordic">
+                        <span class="footer-twitter"></span>
+                    </a>
+
+                    <a href="https://www.facebook.com/chaordic.com.br/">
+                        <span class="footer-facebook"></span>
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <!-- End footer-->
+
+        <script src="js/button_interaction.js"></script>
+    </body>
+</html>
