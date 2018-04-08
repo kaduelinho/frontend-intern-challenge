@@ -13,6 +13,7 @@ function getUrls() {
 
 function fillRanking(list){
     var rankingElement = document.getElementById("top_5");
-    var el = list[0]; // TODO: use whole list
-    rankingElement.innerHTML = '<a href="http://globo.com"">'+ el.shortUrl +'</a>';    
+    var template = document.getElementById("template").innerHTML;
+    var rendered = Mustache.render(template, {urls: list});
+    rankingElement.innerHTML = rendered;
 }
