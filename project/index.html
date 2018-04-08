@@ -14,9 +14,11 @@
             document.write(width+'x'+height);
         </script>
         <script id="template" type="x-tmpl-mustache">
-            {{#urls}}
-            <p>{{url}} {{hits}} <p>
-            {{/urls}}
+                {{#urls}}
+                <a href="{{url}}">
+                    <p>{{shortUrl}} {{hits}} <p>
+                </a>
+                {{/urls}}
         </script>
         <script src="node_modules/mustache/mustache.min.js"></script>
         <script src="js/top_5.js"></script>
@@ -55,8 +57,8 @@
                 </form>
         </article>
 
-        <article id="top_5">
-
+        <article id="top_5" class="ranking">
+            <!-- Will be filled with #template content-->
         </article>
 
         <!--End shortner -->

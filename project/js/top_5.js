@@ -14,6 +14,10 @@ function getUrls() {
 function fillRanking(list){
     var rankingElement = document.getElementById("top_5");
     var template = document.getElementById("template").innerHTML;
+    list = list.slice(0,5).sort(function(a,b){
+        return b.hits - a.hits;
+    })
     var rendered = Mustache.render(template, {urls: list});
+
     rankingElement.innerHTML = rendered;
 }
