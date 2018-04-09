@@ -39,10 +39,8 @@
     color:#ffffff;
     font-size: 18px;
     padding-top: 12px;
-    line-height: 22px; 
-    text-align: center;  
+    line-height: 22px;   
 }
-
 .text_input{
     background: transparent;
     border: none;
@@ -75,15 +73,6 @@
     font-size: 19px;
     font-weight: 700;
 }
-
-.apagaSubmit{
-    opacity: 0;
-    transition: opacity 1s;
-}
-.acendeSubmit{
-    opacity:1;
-    transition: opacity 1s;
-}
 .button_submit:focus{
     outline:none;
 }
@@ -102,7 +91,7 @@
     outline:none;
 }
 
-.pressReset{
+.press_reset{
     opacity:1;
     transition: opacity 1s;
     background-color: transparent;
