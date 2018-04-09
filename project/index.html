@@ -7,7 +7,7 @@
         <script type="text/javascript">
             //resolução navegador
             document.write(screen.width+'x'+screen.height);
-            
+            //Código auxiliar para achar os break-points do design responsivo
             //resolução 'real' navegador
             var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
             var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
@@ -15,9 +15,17 @@
         </script>
         <script id="template" type="x-tmpl-mustache">
                 {{#urls}}
-                <a href="{{url}}">
-                    <p>{{shortUrl}} {{hits}} <p>
-                </a>
+
+                <div class = "containerTopFive">
+                    <a href="{{url}}">
+                        <h2>{{shortUrl}}</h2>
+                    </a>
+                            
+                    <div class = "hits">
+                        {{hits}}
+                    </div>
+                </div>
+                      
                 {{/urls}}
         </script>
         <script src="node_modules/mustache/mustache.min.js"></script>
@@ -27,16 +35,16 @@
     </head>
 
     <body>
-        <!-- Início do cabeçalho -->
+        <!-- Header -->
         <header class = "logo container">
 
             <a href="http://chaordic.com.br/">
                 <img src="../Assets/logo-chaordic.png" alt="Logo Chaordic"></img>
             </a>
            
-        <!-- Fim do cabeçalho -->
+        <!-- End header -->
         </header>
-        <!-- Início do shortner -->
+        <!-- Shortner URLs -->
         <article class = "shortener">
 
             <section class = "title">
@@ -47,21 +55,37 @@
                 <p>Links são longos. Encurte os links que você deseja compartilhar,</p> 
                 <p>e acompanhe enquanto viajam através da internet.</p>
             </section>
-            
                 <form action="#">
-                    <spam class="wrapper">
-                        <input type="text" id = "url_input" class="text_input" placeholder="Cole o seu link aqui" autofocus required>
-                        <input type="reset" id = "btn_reset" class="button_reset" value = "X">
-                    </spam>
-                    <input type="submit" id = "btn_submit" class="button_submit" value="ENCURTAR">
+                    <span class="wrapper">
+                        <input type="text" id = "urlInput" class="textInput" placeholder="Cole o seu link aqui" autofocus required autocomplete="off">
+                        <input type="reset" id = "btnReset" class="buttonReset" value = "X" disabled="true">
+                    </span>
+                    <input type="submit" id = "btnSubmit" class="buttonSubmit" value="ENCURTAR">
                 </form>
         </article>
+        <!--End shortner URLs -->
 
-        <article id="top_5" class="ranking">
-            <!-- Will be filled with #template content-->
+        <!-- Top 5 links -->
+        <div class="topFive">
+            <h1>TOP 5</h1>
+            
+            <article id="top_5" class="ranking">
+                <!-- Will be filled with #template content-->
+            </article>
+        </div>
+        <!-- End Top 5 links -->
+
+        <!-- Hits to URLs -->
+        <article class="boxHits">
+            <section>
+                <h1>HITS</h1>
+                <p class = "totalHits">35.713.571</p>
+                <p class = "legend">Cliques em links</p>
+            </section>
         </article>
+        <!-- End Hits to URLs -->
 
-        <!--End shortner -->
+        <!-- Begin footer -->
             <footer>
                  <a href="https://www.chaordic.com.br">
                     <span class="footer-chaordic">chr.dc</span>
@@ -77,7 +101,7 @@
                 </div>
             </footer>
         </div>
-        <!-- End footer-->
+        <!-- End footer -->
 
     </body>
 </html>
