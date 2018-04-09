@@ -52,8 +52,16 @@
     font-family: "Roboto", sans-serif;
     padding-bottom: 8px;
     width: 345px;
-   
-    
+}
+.apagaInput{
+    color: rgba(0,0,0,0);
+    transition: color 0.7s;
+}
+.acendeInput{
+    color: #ffffff;
+    transition: color 0.7s;
+    font-weight: 700;
+
 }
 
 .text_input::placeholder ,.text_input:focus {
@@ -77,12 +85,12 @@
 }
 
 .apagaSubmit{
-    opacity: 0;
-    transition: opacity 1s;
+    color:#ff6e14;
+    transition: color 0.7s ease-in;
 }
 .acendeSubmit{
-    opacity:1;
-    transition: opacity 1s;
+    color: #ffffff;
+    transition: color 0.7s ease-in;
 }
 .button_submit:focus{
     outline:none;
@@ -104,7 +112,7 @@
 
 .pressReset{
     opacity:1;
-    transition: opacity 1s;
+    transition: opacity 0.7s ease-in;
     background-color: transparent;
     border: none;
     color: #ffffff;
