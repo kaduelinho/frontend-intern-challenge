@@ -4,18 +4,8 @@
         <link rel="stylesheet" href="estilos.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Encurtador de links</title>
-        <script type="text/javascript">
-            //resolução navegador
-            document.write(screen.width+'x'+screen.height);
-            //Código auxiliar para achar os break-points do design responsivo
-            //resolução 'real' navegador
-            var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-            var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-            document.write(width+'x'+height);
-        </script>
         <script id="template" type="x-tmpl-mustache">
                 {{#urls}}
-
                 <div class = "containerTopFive">
                     <a href="{{url}}">
                         <h2>{{shortUrl}}</h2>
@@ -24,8 +14,7 @@
                     <div class = "hits">
                         {{hits}}
                     </div>
-                </div>
-                      
+                </div>    
                 {{/urls}}
         </script>
         <script src="node_modules/mustache/mustache.min.js"></script>
@@ -33,15 +22,12 @@
         <script src="js/button_interaction.js"></script>
         <script src="js/app.js"></script>
     </head>
-
     <body>
         <!-- Header -->
         <header class = "logo container">
-
             <a href="http://chaordic.com.br/">
                 <img src="../Assets/logo-chaordic.png" alt="Logo Chaordic"></img>
             </a>
-           
         <!-- End header -->
         </header>
         <!-- Shortner URLs -->
@@ -56,25 +42,30 @@
                 <p>e acompanhe enquanto viajam através da internet.</p>
             </section>
                 <form action="#">
-                    <span class="wrapper">
+                    <span class="wrapper">  
                         <input type="text" id = "urlInput" class="textInput" placeholder="Cole o seu link aqui" autofocus required autocomplete="off">
                         <input type="reset" id = "btnReset" class="buttonReset" value = "X" disabled="true">
                     </span>
                     <input type="submit" id = "btnSubmit" class="buttonSubmit" value="ENCURTAR">
+                    <div id="copyAlert" class="none">
+                            <p>Link copiado com sucesso</p>
+                    </div>
                 </form>
         </article>
         <!--End shortner URLs -->
-
-        <!-- Top 5 links -->
+        
+        <!-- Top 5 links -->   
         <div class="topFive">
             <h1>TOP 5</h1>
-            
+                    
             <article id="top_5" class="ranking">
                 <!-- Will be filled with #template content-->
             </article>
         </div>
         <!-- End Top 5 links -->
-
+        <div class="arrow">
+            <span class="down-arrow"></span>
+        </div>
         <!-- Hits to URLs -->
         <article class="boxHits">
             <section>
@@ -102,6 +93,5 @@
             </footer>
         </div>
         <!-- End footer -->
-
     </body>
 </html>
